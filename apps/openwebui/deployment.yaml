@@ -29,7 +29,9 @@ spec:
         env:
         - name: OLLAMA_BASE_URL
           value: http://ollama:11434
-          
+        - name: REDIS_URL
+          value: redis://redis:6379
+
         livenessProbe:
           httpGet:
             path: /
@@ -43,13 +45,6 @@ spec:
             port: 8080
           initialDelaySeconds: 30
           periodSeconds: 15
-
-        env:
-        - name: OLLAMA_BASE_URL
-          value: http://ollama:11434
-
-        - name: REDIS_URL
-          value: redis://redis:6379
 
         volumeMounts:
         - name: openwebui-data
