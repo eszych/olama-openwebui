@@ -25,11 +25,20 @@ spec:
 
           export OLLAMA_HOST=http://ollama:11434
 
-          ollama list | grep phi4
+          ollama list | grep mistral
 
           if [ $? -ne 0 ]; then
-            ollama pull phi4
+            ollama pull mistral
           fi
 
-          # ollama pull mistral
-          # ollama pull qwen3:8b
+          ollama list | grep qwen3:8b
+
+          if [ $? -ne 0 ]; then
+            ollama pull qwen3:8b
+          fi
+
+          ollama list | grep llama3.1:8b
+
+          if [ $? -ne 0 ]; then
+            ollama pull llama3.1:8b
+          fi
