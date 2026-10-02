@@ -29,6 +29,20 @@ spec:
         env:
         - name: OLLAMA_BASE_URL
           value: http://ollama:11434
+          
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 30
+
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 15
 
         volumeMounts:
         - name: openwebui-data

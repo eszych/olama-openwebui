@@ -9,11 +9,11 @@ resources:
   #- ../../apps/ollama/redis/service.yaml
 
   # Ollama
-  - ../../apps/ollama/ollama/pvc.yaml
-  - ../../apps/ollama/ollama/deployment.yaml
-  - ../../apps/ollama/ollama/service.yaml
+  - ../../apps/ollama/pvc.yaml
+  - ../../apps/ollama/deployment.yaml
+  - ../../apps/ollama/service.yaml
 
   # OpenWebUI
-  - ../../apps/ollama/openwebui/pvc.yaml
-  - ../../apps/ollama/openwebui/deployment.yaml
-  - ../../apps/ollama/openwebui/service.yaml
+  - ../../apps/openwebui/pvc.yaml
+  - ../../apps/openwebui/deployment.yaml
+  - ../../apps/openwebui/service.yaml
