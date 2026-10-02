@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+
+metadata:
+  name: pull-models
+  namespace: ollama
+
+spec:
+  backoffLimit: 3
+
+  template:
+    spec:
+      restartPolicy: Never
+
+      containers:
+      - name: pull-models
+
+        image: ollama/ollama:latest
+
+        command:
+        - /bin/sh
+        - -c
+        - |
+          sleep 60
+
+          export OLLAMA_HOST=http://ollama:11434
+
+          ollama list | grep phi4
+
+          if [ $? -ne 0 ]; then
+            ollama pull phi4
+          fi
+
+          # ollama pull mistral
+          # ollama pull qwen3:8b

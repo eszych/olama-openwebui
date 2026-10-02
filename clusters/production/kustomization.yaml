@@ -5,13 +5,14 @@ resources:
   - ../../apps/namespace.yaml
 
   # Redis
-  #- ../../apps/ollama/redis/deployment.yaml
-  #- ../../apps/ollama/redis/service.yaml
+  - ../../apps/redis/deployment.yaml
+  - ../../apps/redis/service.yaml
 
   # Ollama
   - ../../apps/ollama/pvc.yaml
   - ../../apps/ollama/deployment.yaml
   - ../../apps/ollama/service.yaml
+  - ../../apps/ollama/models.yaml
 
   # OpenWebUI
   - ../../apps/openwebui/pvc.yaml
