@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../apps/ollama/namespace.yaml
+
+  # Redis
+  - ../../apps/ollama/redis/deployment.yaml
+  - ../../apps/ollama/redis/service.yaml
+
+  # Ollama
+  - ../../apps/ollama/ollama/pvc.yaml
+  - ../../apps/ollama/ollama/deployment.yaml
+  - ../../apps/ollama/ollama/service.yaml
+
+  # OpenWebUI
+  - ../../apps/ollama/openwebui/pvc.yaml
+  - ../../apps/ollama/openwebui/deployment.yaml
+  - ../../apps/ollama/openwebui/service.yaml
+  
